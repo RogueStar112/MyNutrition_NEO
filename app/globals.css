@@ -24,3 +24,41 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes bounce {
+  /* Top position – pause */
+  0%,
+  10% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  /* Falling */
+  40% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  /* Bottom position – pause */
+  50%,
+  60% {
+    transform: translateY(0);
+  }
+
+  /* Rising */
+  90% {
+    transform: translateY(-25%);
+  }
+
+  /* Top position – pause before loop */
+  100% {
+    transform: translateY(-25%);
+  }
+}
+
+
+.animate-bounce-periodic {
+  animation-name: bounce;
+  animation-duration: 4s;
+  animation-iteration-count: 3;
+}
